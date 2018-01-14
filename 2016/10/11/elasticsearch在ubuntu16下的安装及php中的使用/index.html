@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Elasticsearch在ubuntu16下的安装及php中的使用 | Fish 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="安装系统环境：ubuntu 16因为ElasticSearch底层其实就是lucene，所以，需要java环境支持，但各机体安装差异较大，在此就不累述了1234# install javasudo add-apt-repository ppa:webupd8team/javasudo apt-get update &amp;amp;&amp;amp; sudo apt-get install  -y oracle">
+<meta name="keywords" content="es,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Elasticsearch在ubuntu16下的安装及php中的使用 | Fish">
+<meta property="og:url" content="http://yoursite.com/2016/10/11/elasticsearch在ubuntu16下的安装及php中的使用/index.html">
+<meta property="og:site_name" content="Fish">
+<meta property="og:description" content="安装系统环境：ubuntu 16因为ElasticSearch底层其实就是lucene，所以，需要java环境支持，但各机体安装差异较大，在此就不累述了1234# install javasudo add-apt-repository ppa:webupd8team/javasudo apt-get update &amp;amp;&amp;amp; sudo apt-get install  -y oracle">
+<meta property="og:image" content="http://img.blog.csdn.net/20161011213113144">
+<meta property="og:updated_time" content="2018-01-14T09:39:04.348Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Elasticsearch在ubuntu16下的安装及php中的使用 | Fish">
+<meta name="twitter:description" content="安装系统环境：ubuntu 16因为ElasticSearch底层其实就是lucene，所以，需要java环境支持，但各机体安装差异较大，在此就不累述了1234# install javasudo add-apt-repository ppa:webupd8team/javasudo apt-get update &amp;amp;&amp;amp; sudo apt-get install  -y oracle">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20161011213113144">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/avatar.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for Fish"><img src="/images/avatar.jpg" width="80" alt="Fish logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Fish</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/lhq0826" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Elasticsearch在ubuntu16下的安装及php中的使用</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-10-11" class="post-meta__date date">2016-10-11</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/es/">es</a>, <a class="tags-link" href="/tags/linux/">linux</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>安装系统环境：<code>ubuntu 16</code><br>因为<code>ElasticSearch</code>底层其实就是<code>lucene</code>，所以，需要<code>java</code>环境支持，但各机体安装差异较大，在此就不累述了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># install java</span><br><span class="line">sudo add-apt-repository ppa:webupd8team/java</span><br><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install  -y oracle-java8-installer</span><br><span class="line">sudo apt-get install -y oracle-java8-set-default</span><br></pre></td></tr></table></figure></p>
+<p>1.包安装<br>在Ubuntu/Debian上使用apt-get安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install elasticsearch</span><br></pre></td></tr></table></figure></p>
+<p>或者使用 <code>wget</code>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-2.1.0.deb</span><br><span class="line">$ sudo dpkg -i elasticsearch-2.1.0.deb</span><br></pre></td></tr></table></figure></p>
+<p>目前ElasticSearch的最新稳定版为2.1.0，如果之后版本有升级，请将相应的版本号替换掉上面的2.1.0 。<br>设置开机自启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-rc.d elasticsearch defaults 95 10</span><br><span class="line">$ sudo /etc/init.d/elasticsearch start</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service elasticsearch start</span><br></pre></td></tr></table></figure></p>
+<p>测试<br><code>curl http://localhost:9200</code></p>
+<p>你将看到类似以下的信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;status&quot; : 200,</span><br><span class="line">  &quot;name&quot; : &quot;Blue Streak&quot;,</span><br><span class="line">  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,</span><br><span class="line">  &quot;version&quot; : &#123;</span><br><span class="line">    &quot;number&quot; : &quot;2.1.0&quot;,</span><br><span class="line">    &quot;build_hash&quot; : &quot;00f95f4ffca6de89d68b7ccaf80d148f1f70e4d4&quot;,</span><br><span class="line">    &quot;build_timestamp&quot; : &quot;2016-02-02T09:55:30Z&quot;,</span><br><span class="line">    &quot;build_snapshot&quot; : false,</span><br><span class="line">    &quot;lucene_version&quot; : &quot;4.10.4&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;tagline&quot; : &quot;You Know, for Search&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service elasticsearch status</span><br></pre></td></tr></table></figure></p>
+<p>出现<code>runing</code>就表示你安装成功了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">高版本可能出现浏览器访问不了 http://localhost:9200 的情况</span><br></pre></td></tr></table></figure></p>
+<p>需要手动添加ip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd /etc/elasticsearch</span><br><span class="line">$ sudo vim elasticsearch.yml</span><br><span class="line">添加 network.host: 192.168.1.168 (换成你自己的ip)</span><br></pre></td></tr></table></figure></p>
+<p>这样就安装好了，生成环境记得要把<code>network.host</code>注释掉</p>
+<p>安装好后的文件的位置一般如图所示：<br><img src="http://img.blog.csdn.net/20161011213113144" alt="file direcotory"></p>
+<p>2、插件安装<br>head插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/share/elasticsearch</span><br><span class="line">$ ./bin/plugin -install mobz/elasticsearch-head</span><br><span class="line">$ sudo service elasticsearch restart</span><br></pre></td></tr></table></figure></p>
+<p>测试：<code>http://{your ip}:9200/_plugin/head/</code></p>
+<p>ik分词插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/medcl/elasticsearch-analysis-ik</span><br></pre></td></tr></table></figure></p>
+<p>3、php操作</p>
+<p>安装 <code>elasticsearch-php</code> 第三方库</p>
+<p>引入到你的 <code>composer.json</code>文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    &quot;require&quot;: &#123;  </span><br><span class="line">        &quot;elasticsearch/elasticsearch&quot;: &quot;~1.0&quot;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ composer update</span><br></pre></td></tr></table></figure></p>
+<p>项目文件中引入es-php库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">require &apos;vendor/autoload.php&apos;;  </span><br><span class="line">  </span><br><span class="line">$client = new Elasticsearch\Client();</span><br></pre></td></tr></table></figure></p>
+<p>索引一个文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$params = array();  </span><br><span class="line">$params[&apos;body&apos;]  = array(&apos;testField&apos; =&gt; &apos;abc&apos;);  </span><br><span class="line">$params[&apos;index&apos;] = &apos;my_index&apos;;  //索引名字自己定义</span><br><span class="line">$params[&apos;type&apos;]  = &apos;my_type&apos;;  </span><br><span class="line">$params[&apos;id&apos;]    = &apos;my_id&apos;;  //文档id</span><br><span class="line">$ret = $client-&gt;index($params);</span><br></pre></td></tr></table></figure></p>
+<p>获取一个文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$getParams = array();  </span><br><span class="line">$getParams[&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">$getParams[&apos;type&apos;]  = &apos;my_type&apos;;  </span><br><span class="line">$getParams[&apos;id&apos;]    = &apos;my_id&apos;;  </span><br><span class="line">$retDoc = $client-&gt;get($getParams);</span><br></pre></td></tr></table></figure></p>
+<p>搜索一个文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$searchParams[&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">$searchParams[&apos;type&apos;]  = &apos;my_type&apos;;  </span><br><span class="line">$searchParams[&apos;body&apos;][&apos;query&apos;][&apos;match&apos;][&apos;testField&apos;] = &apos;abc&apos;;  </span><br><span class="line">$retDoc = $client-&gt;search($searchParams);</span><br></pre></td></tr></table></figure></p>
+<p>删除一个文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$deleteParams = array();  </span><br><span class="line">$deleteParams[&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">$deleteParams[&apos;type&apos;] = &apos;my_type&apos;;  </span><br><span class="line">$deleteParams[&apos;id&apos;] = &apos;my_id&apos;;  </span><br><span class="line">$retDelete = $client-&gt;delete($deleteParams);</span><br></pre></td></tr></table></figure></p>
+<p>删除一个索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$deleteParams = array();  </span><br><span class="line">$deleteParams[&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">$client-&gt;indices()-&gt;delete($deleteParams);</span><br></pre></td></tr></table></figure></p>
+<p>demo.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php  </span><br><span class="line">require &apos;vendor/autoload.php&apos;;  //引入es-ph库</span><br><span class="line">  </span><br><span class="line">$client = new Elasticsearch\Client();  </span><br><span class="line"></span><br><span class="line">//创建索引文档</span><br><span class="line">function index($client) &#123;  </span><br><span class="line">    $params = array ();  </span><br><span class="line">    $params [&apos;body&apos;] = array (  </span><br><span class="line">            &apos;testField&apos; =&gt; &apos;abc&apos;   </span><br><span class="line">    );  </span><br><span class="line">    $params [&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">    $params [&apos;type&apos;] = &apos;my_type&apos;;  </span><br><span class="line">    $params [&apos;id&apos;] = &apos;my_id&apos;;  </span><br><span class="line">    try &#123;  </span><br><span class="line">        $ret = $client-&gt;index($params);  </span><br><span class="line">        println(&quot;create index success&quot;);  </span><br><span class="line">    &#125; catch(Exception $e) &#123;  </span><br><span class="line">        echo $e-&gt;getMessage();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br><span class="line"> </span><br><span class="line">//获取一个文档</span><br><span class="line">function get($client) &#123;  </span><br><span class="line">    $getParams = array ();  </span><br><span class="line">    $getParams [&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">    $getParams [&apos;type&apos;] = &apos;my_type&apos;;  </span><br><span class="line">    $getParams [&apos;id&apos;] = &apos;my_id&apos;;  </span><br><span class="line">    $retDoc = $client-&gt;get($getParams);  </span><br><span class="line">    println($retDoc);  </span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">//搜索</span><br><span class="line">function search($client) &#123;  </span><br><span class="line">    $searchParams [&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">    $searchParams [&apos;type&apos;] = &apos;my_type&apos;;  </span><br><span class="line">    $searchParams [&apos;body&apos;] [&apos;query&apos;] [&apos;match&apos;] [&apos;testField&apos;] = &apos;abc&apos;;  </span><br><span class="line">    $retDoc = $client-&gt;search($searchParams);  </span><br><span class="line">    println($retDoc);  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">//删除一个文档</span><br><span class="line">function deleteDoc($client) &#123;  </span><br><span class="line">    $deleteParams = array ();  </span><br><span class="line">    $deleteParams [&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">    $deleteParams [&apos;type&apos;] = &apos;my_type&apos;;  </span><br><span class="line">    $deleteParams [&apos;id&apos;] = &apos;my_id&apos;;  </span><br><span class="line">    $retDelete = $client-&gt;delete($deleteParams);  </span><br><span class="line">    println($retDelete);  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">//删除索引</span><br><span class="line">function deleteIndex($client) &#123;  </span><br><span class="line">    $deleteParams = array ();  </span><br><span class="line">    $deleteParams [&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">    $retDelete = $client-&gt;indices()-&gt;delete($deleteParams);  </span><br><span class="line">    println($retDelete);  </span><br><span class="line">&#125;  </span><br><span class="line"> </span><br><span class="line">//创建一个索引</span><br><span class="line">function createIndex($client) &#123;  </span><br><span class="line">    $indexParams [&apos;index&apos;] = &apos;my_index&apos;;  </span><br><span class="line">    $indexParams [&apos;body&apos;] [&apos;settings&apos;] [&apos;number_of_shards&apos;] = 2;  </span><br><span class="line">    $indexParams [&apos;body&apos;] [&apos;settings&apos;] [&apos;number_of_replicas&apos;] = 0;  </span><br><span class="line">    $retCreate = $client-&gt;indices()-&gt;create($indexParams);  </span><br><span class="line">    println($retCreate);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>查看每个方法的运行结果：<br>index():<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index success</span><br></pre></td></tr></table></figure></p>
+<p>get():<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    &quot;_index&quot;: &quot;my_index&quot;,  </span><br><span class="line">    &quot;_type&quot;: &quot;my_type&quot;,  </span><br><span class="line">    &quot;_id&quot;: &quot;my_id&quot;,  </span><br><span class="line">    &quot;_version&quot;: 1,  </span><br><span class="line">    &quot;found&quot;: true,  </span><br><span class="line">    &quot;_source&quot;: &#123;  </span><br><span class="line">        &quot;testField&quot;: &quot;abc&quot;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>search():<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    &quot;took&quot;: 3,  </span><br><span class="line">    &quot;timed_out&quot;: false,  </span><br><span class="line">    &quot;_shards&quot;: &#123;  </span><br><span class="line">        &quot;total&quot;: 5,  </span><br><span class="line">        &quot;successful&quot;: 5,  </span><br><span class="line">        &quot;failed&quot;: 0  </span><br><span class="line">    &#125;,  </span><br><span class="line">    &quot;hits&quot;: &#123;  </span><br><span class="line">        &quot;total&quot;: 1,  </span><br><span class="line">        &quot;max_score&quot;: 0.30685282,  </span><br><span class="line">        &quot;hits&quot;: [  </span><br><span class="line">            &#123;  </span><br><span class="line">                &quot;_index&quot;: &quot;my_index&quot;,  </span><br><span class="line">                &quot;_type&quot;: &quot;my_type&quot;,  </span><br><span class="line">                &quot;_id&quot;: &quot;my_id&quot;,  </span><br><span class="line">                &quot;_score&quot;: 0.30685282,  </span><br><span class="line">                &quot;_source&quot;: &#123;  </span><br><span class="line">                    &quot;testField&quot;: &quot;abc&quot;  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">        ]  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>deleteDoc():<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    &quot;found&quot;: true,  </span><br><span class="line">    &quot;_index&quot;: &quot;my_index&quot;,  </span><br><span class="line">    &quot;_type&quot;: &quot;my_type&quot;,  </span><br><span class="line">    &quot;_id&quot;: &quot;my_id&quot;,  </span><br><span class="line">    &quot;_version&quot;: 2  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>deleteIndex():<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    &quot;acknowledged&quot;: true  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>createIndex():<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    &quot;acknowledged&quot;: true  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
