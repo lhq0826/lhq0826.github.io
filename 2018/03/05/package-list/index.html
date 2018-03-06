@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Laravel 常用扩展包 | Fish&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="扩展包 描述     aws/aws-sdk-php-laravel AWS 官方提供的 SDK 扩展包, 使用它可以非常方便的操作 Amazon 的 S3、Amazon Glacier 和 Amazon DynamoDB 等资源   intervention/image 强大的图片处理扩展包，支持裁剪、水印等处理   SocialiteProviders/manager 最全的三方登录认证">
+<meta name="keywords" content="laravel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laravel 常用扩展包 | Fish&#39;s blog">
+<meta property="og:url" content="http://blog.rubyler.com/2018/03/05/package-list/index.html">
+<meta property="og:site_name" content="Fish&#39;s blog">
+<meta property="og:description" content="扩展包 描述     aws/aws-sdk-php-laravel AWS 官方提供的 SDK 扩展包, 使用它可以非常方便的操作 Amazon 的 S3、Amazon Glacier 和 Amazon DynamoDB 等资源   intervention/image 强大的图片处理扩展包，支持裁剪、水印等处理   SocialiteProviders/manager 最全的三方登录认证">
+<meta property="og:updated_time" content="2018-03-06T13:37:12.431Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Laravel 常用扩展包 | Fish&#39;s blog">
+<meta name="twitter:description" content="扩展包 描述     aws/aws-sdk-php-laravel AWS 官方提供的 SDK 扩展包, 使用它可以非常方便的操作 Amazon 的 S3、Amazon Glacier 和 Amazon DynamoDB 等资源   intervention/image 强大的图片处理扩展包，支持裁剪、水印等处理   SocialiteProviders/manager 最全的三方登录认证">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/avatar.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for Fish&#39;s blog"><img src="/images/avatar.jpg" width="80" alt="Fish&#39;s blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Fish&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          最爱小虾米~~
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/lhq0826" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Laravel 常用扩展包</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-03-05" class="post-meta__date date">2018-03-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/laravel/">laravel</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <table>
+<thead>
+<tr>
+<th>扩展包</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/aws/aws-sdk-php-laravel" target="_blank" rel="noopener">aws/aws-sdk-php-laravel</a></td>
+<td>AWS 官方提供的 SDK 扩展包, 使用它可以非常方便的操作 Amazon 的 S3、Amazon Glacier 和 Amazon DynamoDB 等资源</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Intervention/image" target="_blank" rel="noopener">intervention/image</a></td>
+<td>强大的图片处理扩展包，支持裁剪、水印等处理</td>
+</tr>
+<tr>
+<td><a href="https://github.com/SocialiteProviders" target="_blank" rel="noopener">SocialiteProviders/manager</a></td>
+<td>最全的三方登录认证 <a href="http://socialiteproviders.github.io/" target="_blank" rel="noopener">http://socialiteproviders.github.io/</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/jenssegers/agent" target="_blank" rel="noopener">jenssegers/agent</a></td>
+<td>客户端识别包</td>
+</tr>
+<tr>
+<td><a href="https://github.com/elasticquent/Elasticquent" target="_blank" rel="noopener">elasticquent/elasticquent</a></td>
+<td>elasticsearch model包</td>
+</tr>
+<tr>
+<td><a href="https://github.com/etrepat/baum" target="_blank" rel="noopener">baum/baum</a></td>
+<td>嵌套集合模型网易跟帖</td>
+</tr>
+<tr>
+<td><a href="https://github.com/VentureCraft/revisionable" target="_blank" rel="noopener">venturecraft/revisionable</a></td>
+<td>为 model 添加操作历史</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dingo/api" target="_blank" rel="noopener">dingo/api</a></td>
+<td>restful api 管理工具</td>
+</tr>
+<tr>
+<td><a href="https://github.com/slampenny/Swaggervel" target="_blank" rel="noopener">jlapp/swaggervel</a></td>
+<td>Swagger API 规范支持</td>
+</tr>
+<tr>
+<td><a href="https://github.com/UniSharp/laravel-ckeditor" target="_blank" rel="noopener">unisharp/laravel-ckeditor</a></td>
+<td>ckeditor 加载包</td>
+</tr>
+<tr>
+<td><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="noopener">barryvdh/laravel-ide-helper</a></td>
+<td>IDE 开发助手</td>
+</tr>
+<tr>
+<td><a href="https://github.com/barryvdh/laravel-debugbar" target="_blank" rel="noopener">barryvdh/laravel-debugbar</a></td>
+<td>debugbar调试工具栏</td>
+</tr>
+<tr>
+<td><a href="https://github.com/yajra/laravel-datatables" target="_blank" rel="noopener">yajra/laravel-datatables-oracle</a></td>
+<td>jQuery DataTables 的后端支持</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lokielse/omnipay-wechatpay" target="_blank" rel="noopener">lokielse/omnipay-wechatpay</a></td>
+<td>微信支付</td>
+</tr>
+<tr>
+<td><a href="https://github.com/thephpleague/omnipay-paypal" target="_blank" rel="noopener">omnipay/paypal</a></td>
+<td>paypal 支付</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ignited/laravel-omnipay" target="_blank" rel="noopener">ignited/laravel-omnipay</a></td>
+<td>各种支付方式</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ARCANEDEV/LogViewer" target="_blank" rel="noopener">arcanedev/log-viewer</a></td>
+<td>日志查看</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peinhu/AetherUpload-Laravel" target="_blank" rel="noopener">peinhu/aetherupload-laravel</a></td>
+<td>大文件上传,断点续传，进度显示</td>
+</tr>
+<tr>
+<td><a href="https://github.com/aporat/store-receipt-validator" target="_blank" rel="noopener">aporat/store-receipt-validator</a></td>
+<td>appstore receipt</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kevinkhill/lavacharts" target="_blank" rel="noopener">khill/lavacharts</a></td>
+<td>图表展示</td>
+</tr>
+<tr>
+<td><a href="https://github.com/barryvdh/laravel-cors" target="_blank" rel="noopener">barryvdh/laravel-cors</a></td>
+<td>cors 跨域</td>
+</tr>
+<tr>
+<td><a href="https://github.com/DarkaOnLine/L5-Swagger" target="_blank" rel="noopener">darkaonline/l5-swagger</a></td>
+<td>swagger 工具</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Torann/laravel-geoip" target="_blank" rel="noopener">torann/geoip</a></td>
+<td>根据IP地址确定网站访问者的地理位置</td>
+</tr>
+<tr>
+<td><a href="https://github.com/toin0u/Geotools-laravel" target="_blank" rel="noopener">toin0u/geotools-laravel</a></td>
+<td>geo</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lokielse/omnipay-alipay" target="_blank" rel="noopener">lokielse/omnipay-alipay</a></td>
+<td>alipay 支付</td>
+</tr>
+<tr>
+<td><a href="https://github.com/fideloper/TrustedProxy" target="_blank" rel="noopener">fideloper/proxy</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/Gregwar/Captcha" target="_blank" rel="noopener">gregwar/captcha</a></td>
+<td>验证码</td>
+</tr>
+<tr>
+<td><a href="https://github.com/overtrue/easy-sms" target="_blank" rel="noopener">overtrue/easy-sms</a></td>
+<td>短信验证码</td>
+</tr>
+<tr>
+<td><a href="https://github.com/laracasts/Laravel-5-Generators-Extended" target="_blank" rel="noopener">laracasts/generators</a></td>
+<td>generators 升级版，方便本地开发</td>
+</tr>
+</tbody>
+</table>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次, 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+    <span class="footer__copyright">&copy; 2018-2019. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
