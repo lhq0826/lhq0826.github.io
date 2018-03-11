@@ -7,7 +7,7 @@
     
 
     <title>
-      Archives: 2018 
+      laravel with 查询指定字段 | Fish&#39;s blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,12 +16,17 @@
     
     
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Archives: 2018">
-<meta property="og:url" content="http://blog.rubyler.com/archives/2018/index.html">
+    <meta name="description" content="Model 基类中定义一个范围查询12345678910111213141516class BaseModel extends Model&amp;#123;    public function scopeWithCertain($query, $relation, $columns, $where = &apos;&apos;)    &amp;#123;        $columns = (array)($columns);">
+<meta name="keywords" content="laravel,tips">
+<meta property="og:type" content="article">
+<meta property="og:title" content="laravel with 查询指定字段 | Fish&#39;s blog">
+<meta property="og:url" content="http://blog.rubyler.com/2018/03/11/laravel-with/index.html">
 <meta property="og:site_name" content="Fish&#39;s blog">
+<meta property="og:description" content="Model 基类中定义一个范围查询12345678910111213141516class BaseModel extends Model&amp;#123;    public function scopeWithCertain($query, $relation, $columns, $where = &apos;&apos;)    &amp;#123;        $columns = (array)($columns);">
+<meta property="og:updated_time" content="2018-03-11T04:16:22.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Archives: 2018">
+<meta name="twitter:title" content="laravel with 查询指定字段 | Fish&#39;s blog">
+<meta name="twitter:description" content="Model 基类中定义一个范围查询12345678910111213141516class BaseModel extends Model&amp;#123;    public function scopeWithCertain($query, $relation, $columns, $where = &apos;&apos;)    &amp;#123;        $columns = (array)($columns);">
     
     
     
@@ -187,83 +192,51 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-  <h1 class="archive-title">Archives: 2018</h1>
-  <hr class="post-list__divider" />
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">laravel with 查询指定字段</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2018/03/11/laravel-with/" title="link to laravel with 查询指定字段">laravel with 查询指定字段</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2018-03-11" class="post-list__meta--date date">2018-03-11</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2018/03/05/package-list/" title="link to Laravel 常用扩展包">Laravel 常用扩展包</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2018-03-05" class="post-list__meta--date date">2018-03-05</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2018/03/04/moreau/" title="link to 面经">面经</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2018-03-04" class="post-list__meta--date date">2018-03-04</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number"> 1 / 1</span>
+    <div class="post-meta">
+      <time datetime="2018-03-11" class="post-meta__date date">2018-03-11</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/laravel/">laravel</a>, <a class="tags-link" href="/tags/tips/">tips</a>
+            </font>
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>Model 基类中定义一个范围查询<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseModel</span> <span class="keyword">extends</span> <span class="title">Model</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">scopeWithCertain</span><span class="params">($query, $relation, $columns, $where = <span class="string">''</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $columns = (<span class="keyword">array</span>)($columns);</span><br><span class="line">        <span class="keyword">if</span> ($where) &#123;</span><br><span class="line">            <span class="keyword">return</span> $query-&gt;with([$relation =&gt; <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> <span class="title">use</span> <span class="params">($where, $columns)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> ($where) &#123;</span><br><span class="line">                    $query-&gt;where($where)-&gt;select($columns);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    $query-&gt;select($columns);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$model-&gt;withCertain(<span class="string">'relation'</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]);</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
 
 
-</div>
+</article>
+
+
             <footer class="footer">
     本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次, 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
     <span class="footer__copyright">&copy; 2018-2019. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
@@ -281,6 +254,18 @@ classes that you can use:
 
     
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
     <!--kill ie6 -->
