@@ -4,6 +4,61 @@
 
     
   <url>
+    <loc>http://blog.rubyler.com/2018/03/16/phpstorm-php-cs-php-cs-fix/</loc>
+    <lastmod>2018-03-16T15:43:09.372Z</lastmod>
+    <data>
+        <display>
+        <title>phpstorm+php-cs+php-cs-fix 配置</title>
+        <pubTime>2018-03-16T15:38:37.000Z</pubTime>
+        
+        <tag>phpstorm</tag>
+         
+        <tag>php</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.rubyler.com/2018/03/16/vim-save-read-only-file/</loc>
+    <lastmod>2018-03-16T15:34:41.595Z</lastmod>
+    <data>
+        <display>
+        <title>vim 保存只读文件</title>
+        <pubTime>2018-03-16T15:08:51.000Z</pubTime>
+        
+        <tag>tips</tag>
+         
+        <tag>vim</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.rubyler.com/2018/03/05/package-list/</loc>
+    <lastmod>2018-03-16T15:34:00.161Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel 常用扩展包</title>
+        <pubTime>2018-03-05T11:58:23.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rubyler.com/2018/03/11/laravel-with/</loc>
     <lastmod>2018-03-11T04:16:22.546Z</lastmod>
     <data>
@@ -50,23 +105,6 @@
         <tag>ngrok</tag>
          
         <tag>wechat</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.rubyler.com/2018/03/05/package-list/</loc>
-    <lastmod>2018-03-06T13:37:12.431Z</lastmod>
-    <data>
-        <display>
-        <title>Laravel 常用扩展包</title>
-        <pubTime>2018-03-05T11:58:23.000Z</pubTime>
-        
-        <tag>laravel</tag>
          
          
            
