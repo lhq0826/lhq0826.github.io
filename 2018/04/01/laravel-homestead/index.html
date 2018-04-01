@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Laravel homestead 环境搭建 | Fish&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="下载安装 Vagrant &amp;amp; VirtualBox1百度网盘地址: https://pan.baidu.com/s/1jH6o5sa#list/path=%2F 一步步默认安装即可 安装 git 工具1自行安装 下载 homestead box12345地址:http://download.fsdhub.com/lt-homestead-3-0-0-2017082400.zip下载后的文件">
+<meta name="keywords" content="laravel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laravel homestead 环境搭建 | Fish&#39;s blog">
+<meta property="og:url" content="http://blog.rubyler.com/2018/04/01/laravel-homestead/index.html">
+<meta property="og:site_name" content="Fish&#39;s blog">
+<meta property="og:description" content="下载安装 Vagrant &amp;amp; VirtualBox1百度网盘地址: https://pan.baidu.com/s/1jH6o5sa#list/path=%2F 一步步默认安装即可 安装 git 工具1自行安装 下载 homestead box12345地址:http://download.fsdhub.com/lt-homestead-3-0-0-2017082400.zip下载后的文件">
+<meta property="og:updated_time" content="2018-04-01T07:02:03.172Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Laravel homestead 环境搭建 | Fish&#39;s blog">
+<meta name="twitter:description" content="下载安装 Vagrant &amp;amp; VirtualBox1百度网盘地址: https://pan.baidu.com/s/1jH6o5sa#list/path=%2F 一步步默认安装即可 安装 git 工具1自行安装 下载 homestead box12345地址:http://download.fsdhub.com/lt-homestead-3-0-0-2017082400.zip下载后的文件">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/avatar.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for Fish&#39;s blog"><img src="/images/avatar.jpg" width="80" alt="Fish&#39;s blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Fish&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          最爱小虾米~~
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/lhq0826" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Laravel homestead 环境搭建</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-04-01" class="post-meta__date date">2018-04-01</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/laravel/">laravel</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="下载安装-Vagrant-amp-VirtualBox"><a href="#下载安装-Vagrant-amp-VirtualBox" class="headerlink" title="下载安装 Vagrant &amp; VirtualBox"></a>下载安装 Vagrant &amp; VirtualBox</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">百度网盘地址: https://pan.baidu.com/s/1jH6o5sa<span class="comment">#list/path=%2F 一步步默认安装即可</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装-git-工具"><a href="#安装-git-工具" class="headerlink" title="安装 git 工具"></a>安装 git 工具</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">自行安装</span><br></pre></td></tr></table></figure>
+<h3 id="下载-homestead-box"><a href="#下载-homestead-box" class="headerlink" title="下载 homestead box"></a>下载 homestead box</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">地址:http://download.fsdhub.com/lt-homestead-3-0-0-2017082400.zip</span><br><span class="line">下载后的文件为 lt-homestead-3-0-0-2017082400.zip, 请对其进行 zip 解压操作, 解压成功后可以看到目录 </span><br><span class="line">lt-homestead-3-0-0-2017082400 此目录下包含两个文件:</span><br><span class="line">homestead-virtualbox-3.0.0.box</span><br><span class="line">metadata.json (盒子的导入配置文件)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant box add metadata.json 必须非非中文路径</span><br><span class="line"></span><br><span class="line">如果你使用的 Windows 系统在安装 Homestead 的时候报错: The box <span class="string">'laravel/homestead'</span> could not be found or could not be accessed <span class="keyword">in</span> the remote catalog., </span><br><span class="line">请下载 MS Visual C++ 2010 x86 Redistributables[https://www.microsoft.com/en-us/download/confirmation.aspx?id=5555] 并进行安装即可修复。</span><br></pre></td></tr></table></figure>
+<h3 id="下载管理脚本"><a href="#下载管理脚本" class="headerlink" title="下载管理脚本"></a>下载管理脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~</span><br><span class="line">$ git <span class="built_in">clone</span> https://git.coding.net/summerblue/homestead.git Homestead</span><br></pre></td></tr></table></figure>
+<h3 id="初始化homestead"><a href="#初始化homestead" class="headerlink" title="初始化homestead"></a>初始化homestead</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/Homestead</span><br><span class="line">$ git checkout v5.4.0</span><br><span class="line">$ bash init.sh</span><br><span class="line"></span><br><span class="line">运行以上命令后, 会在 ~/Homestead 目录下生成以下三个文件:</span><br><span class="line">Homestead.yaml - 主要配置信息文件, 我们可以在此文件中配置 Homestead 的站点和数据库等信息;</span><br><span class="line">after.sh - 每一次 Homestead 盒子重置后（provision）会调用的 shell 脚本文件;</span><br><span class="line">aliases - 每一次 Homestead 盒子重置后（provision), 会被替换至虚拟机的 ~/.bash_aliases 文件中, aliases 里可以放一些快捷命令的定义.</span><br></pre></td></tr></table></figure>
+<h3 id="配置-homestead-yaml"><a href="#配置-homestead-yaml" class="headerlink" title="配置 homestead.yaml"></a>配置 homestead.yaml</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">ip:</span> <span class="string">"192.168.10.10"</span></span><br><span class="line"><span class="attr">memory:</span> <span class="number">2048</span></span><br><span class="line"><span class="attr">cpus:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">provider:</span> <span class="string">virtualbox</span></span><br><span class="line"></span><br><span class="line"><span class="attr">authorize:</span> <span class="string">~/.ssh/id_rsa.pub</span> <span class="comment">#如果没有本地生成 ssh-keygen</span></span><br><span class="line"></span><br><span class="line"><span class="attr">keys:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">~/.ssh/id_rsa</span> <span class="comment">#如果没有本地生成 ssh-keygen</span></span><br><span class="line"></span><br><span class="line"><span class="attr">folders:</span> <span class="comment">#共享文件</span></span><br><span class="line"><span class="attr">    - map:</span> <span class="string">~/Desktop/Code</span> <span class="comment">#需要共享的本地文件夹</span></span><br><span class="line"><span class="attr">      to:</span> <span class="string">/home/vagrant/Code</span></span><br><span class="line"></span><br><span class="line"><span class="attr">sites:</span> <span class="comment">#站点配置</span></span><br><span class="line"><span class="attr">    - map:</span> <span class="string">homestead.app</span></span><br><span class="line"><span class="attr">      to:</span> <span class="string">/home/vagrant/Laravel/public</span></span><br><span class="line"><span class="attr">    - map:</span> <span class="string">homestead.com</span></span><br><span class="line"><span class="attr">      to:</span> <span class="string">/home/vagrant/Code/laravel/public</span></span><br><span class="line"><span class="attr">databases:</span> <span class="comment">#数据库名, 宿主机连接 127.0.0.1 33060 homestead@secret</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">homestead</span></span><br></pre></td></tr></table></figure>
+<h3 id="vagrant-常用命令"><a href="#vagrant-常用命令" class="headerlink" title="vagrant 常用命令"></a>vagrant 常用命令</h3><table>
+<thead>
+<tr>
+<th>命令行</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vagrant init</td>
+<td>初始化 vagrant</td>
+</tr>
+<tr>
+<td>vagrant up</td>
+<td>启动 vagrant</td>
+</tr>
+<tr>
+<td>vagrant halt</td>
+<td>关闭 vagrant</td>
+</tr>
+<tr>
+<td>vagrant ssh</td>
+<td>通过 SSH 登录 vagrant（需要先启动 vagrant）</td>
+</tr>
+<tr>
+<td>vagrant provision</td>
+<td>重新应用更改 vagrant 配置</td>
+</tr>
+<tr>
+<td>vagrant destroy</td>
+<td>删除 vagrant</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vagrant-插件"><a href="#vagrant-插件" class="headerlink" title="vagrant 插件"></a>vagrant 插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant plugin install vagrant-vbguest --plugin-clean-sources --plugin-source https://gems.ruby-china.org/ <span class="comment">#共享文件夹需要的插件</span></span><br><span class="line">$ vagrant plugin install vagrant-winnfsd --plugin-clean-sources --plugin-source https://gems.ruby-china.org/ <span class="comment">#加速响应插件</span></span><br></pre></td></tr></table></figure>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次, 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+    <span class="footer__copyright">&copy; 2018-2019. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

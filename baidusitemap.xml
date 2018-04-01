@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://blog.rubyler.com/2018/04/01/laravel-homestead/</loc>
+    <lastmod>2018-04-01T07:02:03.172Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel homestead 环境搭建</title>
+        <pubTime>2018-04-01T06:30:46.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rubyler.com/2018/03/16/phpstorm-php-cs-php-cs-fix/</loc>
     <lastmod>2018-03-16T15:43:09.372Z</lastmod>
     <data>
@@ -69,23 +86,6 @@
         <tag>laravel</tag>
          
         <tag>tips</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.rubyler.com/2018/03/04/moreau/</loc>
-    <lastmod>2018-03-06T13:37:34.109Z</lastmod>
-    <data>
-        <display>
-        <title>面经</title>
-        <pubTime>2018-03-04T10:18:29.000Z</pubTime>
-        
-        <tag>moreau</tag>
          
          
            
