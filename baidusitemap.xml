@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://blog.rubyler.com/2018/04/06/laravel-docker/</loc>
+    <lastmod>2018-04-06T09:20:36.574Z</lastmod>
+    <data>
+        <display>
+        <title>laradock win10</title>
+        <pubTime>2018-04-06T09:06:40.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+        <tag>laravel</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rubyler.com/2018/04/01/laravel-homestead/</loc>
     <lastmod>2018-04-01T07:02:03.172Z</lastmod>
     <data>
@@ -47,9 +66,9 @@
         <title>vim 保存只读文件</title>
         <pubTime>2018-03-16T15:08:51.000Z</pubTime>
         
-        <tag>tips</tag>
-         
         <tag>vim</tag>
+         
+        <tag>tips</tag>
          
          
            
