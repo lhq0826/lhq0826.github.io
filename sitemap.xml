@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.rubyler.com/2018/08/10/phabricator-server/</loc>
+    
+    <lastmod>2018-08-10T15:53:45.973Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.rubyler.com/2018/04/06/laravel-docker/</loc>
     
     <lastmod>2018-04-06T09:20:36.574Z</lastmod>

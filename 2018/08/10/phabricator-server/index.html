@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Phabricator server 安装和配置 | Fish&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="Phabricator是Facebook一个开源可视化的代码审查工具，可以进行代码 review、项目管理、wiki等功能，还可以bug跟踪，直接做jira与代码review关联。 安装git clone 安装源码环境 ubuntu + php7.2 + nginx + git选择一个安装目录下面以 www为例1234$ mkdir www &amp;amp;&amp;amp; cd www$ git clone">
+<meta name="keywords" content="Phabricator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Phabricator server 安装和配置 | Fish&#39;s blog">
+<meta property="og:url" content="http://blog.rubyler.com/2018/08/10/phabricator-server/index.html">
+<meta property="og:site_name" content="Fish&#39;s blog">
+<meta property="og:description" content="Phabricator是Facebook一个开源可视化的代码审查工具，可以进行代码 review、项目管理、wiki等功能，还可以bug跟踪，直接做jira与代码review关联。 安装git clone 安装源码环境 ubuntu + php7.2 + nginx + git选择一个安装目录下面以 www为例1234$ mkdir www &amp;amp;&amp;amp; cd www$ git clone">
+<meta property="og:updated_time" content="2018-08-10T15:53:45.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Phabricator server 安装和配置 | Fish&#39;s blog">
+<meta name="twitter:description" content="Phabricator是Facebook一个开源可视化的代码审查工具，可以进行代码 review、项目管理、wiki等功能，还可以bug跟踪，直接做jira与代码review关联。 安装git clone 安装源码环境 ubuntu + php7.2 + nginx + git选择一个安装目录下面以 www为例1234$ mkdir www &amp;amp;&amp;amp; cd www$ git clone">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/avatar.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for Fish&#39;s blog"><img src="/images/avatar.jpg" width="80" alt="Fish&#39;s blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Fish&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          最爱小虾米~~
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/lhq0826" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Phabricator server 安装和配置</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-08-10" class="post-meta__date date">2018-08-10</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Phabricator/">Phabricator</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>Phabricator是Facebook一个开源可视化的代码审查工具，可以进行代码 review、项目管理、wiki等功能，还可以bug跟踪，直接做jira与代码review关联。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="git-clone-安装源码"><a href="#git-clone-安装源码" class="headerlink" title="git clone 安装源码"></a>git clone 安装源码</h4><p>环境 ubuntu + php7.2 + nginx + git<br>选择一个安装目录下面以 <code>www</code>为例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir www &amp;&amp; <span class="built_in">cd</span> www</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/phacility/phabricator.git <span class="comment">#(Pha 源码)</span></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/phacility/libphutil.git</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/phacility/libphutil.git</span><br></pre></td></tr></table></figure></p>
+<h4 id="安装-nginx"><a href="#安装-nginx" class="headerlink" title="安装 nginx"></a>安装 nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install software-properties-common</span><br><span class="line">$ sudo add-apt-repository ppa:nginx/stable</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt install -y nginx</span><br></pre></td></tr></table></figure>
+<h4 id="配置-nginx"><a href="#配置-nginx" class="headerlink" title="配置 nginx"></a>配置 nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  server_name domain; <span class="comment"># 配置域名</span></span><br><span class="line">  root        /home/xx/www/phabricator/webroot; <span class="comment"># 配置根目录</span></span><br><span class="line"></span><br><span class="line">  location / &#123;</span><br><span class="line">    index index.php;</span><br><span class="line">    rewrite ^/(.*)$ /index.php?__path__=/<span class="variable">$1</span> last;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  location /index.php &#123;</span><br><span class="line">    fastcgi_pass   unix:/run/php/php7.2-fpm.sock;</span><br><span class="line">    fastcgi_index   index.php;</span><br><span class="line"></span><br><span class="line">    fastcgi_param  REDIRECT_STATUS    200;</span><br><span class="line"></span><br><span class="line">    fastcgi_param  SCRIPT_FILENAME    <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">    fastcgi_param  QUERY_STRING       <span class="variable">$query_string</span>;</span><br><span class="line">    fastcgi_param  REQUEST_METHOD     <span class="variable">$request_method</span>;</span><br><span class="line">    fastcgi_param  CONTENT_TYPE       <span class="variable">$content_type</span>;</span><br><span class="line">    fastcgi_param  CONTENT_LENGTH     <span class="variable">$content_length</span>;</span><br><span class="line"></span><br><span class="line">    fastcgi_param  SCRIPT_NAME        <span class="variable">$fastcgi_script_name</span>;</span><br><span class="line"></span><br><span class="line">    fastcgi_param  GATEWAY_INTERFACE  CGI/1.1;</span><br><span class="line">    fastcgi_param  SERVER_SOFTWARE    nginx/<span class="variable">$nginx_version</span>;</span><br><span class="line"></span><br><span class="line">    fastcgi_param  REMOTE_ADDR        <span class="variable">$remote_addr</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="安装-php7-2"><a href="#安装-php7-2" class="headerlink" title="安装 php7.2"></a>安装 php7.2</h4><p>新版本的 pha 要求 php 版本 &gt;= 7.2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install php7.2 php7.2-fpm php7.2-mysql php7.2-common php7.2-xml</span><br></pre></td></tr></table></figure></p>
+<h4 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install mysql</span><br></pre></td></tr></table></figure>
+<h4 id="开通管理员账号"><a href="#开通管理员账号" class="headerlink" title="开通管理员账号"></a>开通管理员账号</h4><p>浏览器访问 nginx 中的 server name, 第一个注册用户默认为管理员<br>Auth -&gt; Auth Providers -&gt; add Auth Providers 选择 Username/Password 如果公司内部使用建议关闭 注册权限, 新用户由管理员手动添加</p>
+<h4 id="配置邮件发送数据库信息等配置"><a href="#配置邮件发送数据库信息等配置" class="headerlink" title="配置邮件发送数据库信息等配置"></a>配置邮件发送数据库信息等配置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ vim phabricator/conf/<span class="built_in">local</span>/local.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"phpmailer.smtp-port"</span>: 465,</span><br><span class="line">  <span class="string">"phpmailer.smtp-protocol"</span>: <span class="string">"ssl"</span>,</span><br><span class="line">  <span class="string">"phpmailer.smtp-password"</span>: <span class="string">"xxx"</span>,</span><br><span class="line">  <span class="string">"phpmailer.smtp-user"</span>: <span class="string">"xxx"</span>,</span><br><span class="line">  <span class="string">"phpmailer.smtp-host"</span>: <span class="string">"smtp.126.com"</span>,//替换为自己的邮件服务商</span><br><span class="line">  <span class="string">"phabricator.base-uri"</span>: <span class="string">"xxx"</span>,//nginx server name</span><br><span class="line">  <span class="string">"mysql.host"</span>: <span class="string">"localhost"</span>,//数据库配置信息</span><br><span class="line">  <span class="string">"mysql.user"</span>: <span class="string">"root"</span>,</span><br><span class="line">  <span class="string">"mysql.pass"</span>: <span class="string">"root"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="解决安装指南中的issue"><a href="#解决安装指南中的issue" class="headerlink" title="解决安装指南中的issue"></a>解决安装指南中的issue</h4><p>apc配置, php配置, 开启守护进程, 配置上传文件的大小, 配置语法高亮等, 按照提示一步步操作即可</p>
+<h4 id="下载中文语言包"><a href="#下载中文语言包" class="headerlink" title="下载中文语言包"></a>下载中文语言包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> phabricator/src/extensions/</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/lhq0826/phabricator-zh_CN.git</span><br></pre></td></tr></table></figure>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!--PC和WAP自适应版-->
+    <div id="SOHUCS"></div>
+    <script type="text/javascript">
+    (function(){
+    var appid = 'cytyesQN1';
+    var conf = 'prod_cf5dfbe70ceb4d20bbbc0afbc0325be2';
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+</section>
+
+
+
+</article>
+
+
+            <footer class="footer">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次, 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+    <span class="footer__copyright">&copy; 2018-2019. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

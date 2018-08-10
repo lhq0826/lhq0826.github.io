@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://blog.rubyler.com/2018/08/10/phabricator-server/</loc>
+    <lastmod>2018-08-10T15:53:45.973Z</lastmod>
+    <data>
+        <display>
+        <title>Phabricator server 安装和配置</title>
+        <pubTime>2018-08-10T15:13:10.000Z</pubTime>
+        
+        <tag>Phabricator</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rubyler.com/2018/04/06/laravel-docker/</loc>
     <lastmod>2018-04-06T09:20:36.574Z</lastmod>
     <data>
@@ -11,9 +28,9 @@
         <title>laradock win10</title>
         <pubTime>2018-04-06T09:06:40.000Z</pubTime>
         
-        <tag>docker</tag>
-         
         <tag>laravel</tag>
+         
+        <tag>docker</tag>
          
          
            
@@ -66,9 +83,9 @@
         <title>vim 保存只读文件</title>
         <pubTime>2018-03-16T15:08:51.000Z</pubTime>
         
-        <tag>vim</tag>
-         
         <tag>tips</tag>
+         
+        <tag>vim</tag>
          
          
            
