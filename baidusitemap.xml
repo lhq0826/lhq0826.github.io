@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://blog.rubyler.com/2018/08/11/phabricator-client/</loc>
+    <lastmod>2018-08-12T07:35:02.048Z</lastmod>
+    <data>
+        <display>
+        <title>Phabricator client 安装配置</title>
+        <pubTime>2018-08-11T02:12:39.000Z</pubTime>
+        
+        <tag>phabricator</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.rubyler.com/2018/08/10/phabricator-server/</loc>
     <lastmod>2018-08-10T15:53:45.973Z</lastmod>
     <data>
@@ -28,9 +45,9 @@
         <title>laradock win10</title>
         <pubTime>2018-04-06T09:06:40.000Z</pubTime>
         
-        <tag>laravel</tag>
-         
         <tag>docker</tag>
+         
+        <tag>laravel</tag>
          
          
            

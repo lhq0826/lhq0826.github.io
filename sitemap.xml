@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.rubyler.com/2018/08/11/phabricator-client/</loc>
+    
+    <lastmod>2018-08-12T07:35:02.048Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.rubyler.com/2018/08/10/phabricator-server/</loc>
     
     <lastmod>2018-08-10T15:53:45.973Z</lastmod>
